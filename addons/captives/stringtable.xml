@@ -427,5 +427,17 @@
             <Chinese>投降或無武器狀態</Chinese>
             <Chinesesimp>投降或无武器状态</Chinesesimp>
         </Key>
+        <Key ID="STR_ACE_Captives_Handcuffs">
+            <English>Handcuffs</English>
+        </Key>
+        <Key ID="STR_ACE_Captives_HandcuffsDescription">
+            <English>Handcuffs that allow you to restrain prisoners.</English>
+        </Key>
+        <Key ID="STR_ACE_Captives_HandcuffsKeys">
+            <English>Handcuffs Keys</English>
+        </Key>
+        <Key ID="STR_ACE_Captives_HandcuffsKeysDescription">
+            <English>Keys allow you to free your prisoner who is handcuffed.</English>
+        </Key>
     </Package>
 </Project>
