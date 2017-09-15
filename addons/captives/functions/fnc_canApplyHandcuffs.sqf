@@ -1,5 +1,5 @@
 /*
- * Author: PabstMirror
+ * Author: Nitelite
  * Checks the conditions for being able to apply handcuffs
  *
  * Arguments:
@@ -17,12 +17,17 @@
 #include "script_component.hpp"
 
 params ["_unit", "_target"];
+<<<<<<< Updated upstream
 //Check sides, Player has Hundcuffs, target is alive and not already handcuffed
+=======
+//Check sides, Player has handcuffs, target is alive and not already handcuffed/ziptied
+>>>>>>> Stashed changes
 
 (GVAR(allowHandcuffOwnSide) || {(side _unit) != (side _target)}) &&
 {"ACE_Handcuffs" in (items _unit)} &&
 {alive _target} &&
 {!(_target getVariable [QGVAR(isHandcuffed), false])} &&
+{!(_target getVariable [QGVAR(isZiptied), false])} &&
 {
     (_target getVariable ["ACE_isUnconscious", false]) || //isUnconscious
     {!([_target] call EFUNC(common,isPlayer))} || //is an AI (not a player)

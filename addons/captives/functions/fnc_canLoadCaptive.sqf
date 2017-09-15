@@ -22,12 +22,12 @@ params ["_unit", "_target","_vehicle"];
 if ((isNull _target) && {_unit getVariable [QGVAR(isEscorting), false]}) then {
     //Looking at a vehicle while escorting, get target from attached objects:
     {
-        if (_x getVariable [QGVAR(isHandcuffed), false]) exitWith {
+        if ((_x getVariable [QGVAR(isHandcuffed), false]) || (_x getVariable [QGVAR(isZiptied), false])) exitWith {
             _target = _x;
         };
     } forEach (attachedObjects _unit);
 };
-if ((isNull _target) || {(vehicle _target) != _target} || {!(_target getVariable [QGVAR(isHandcuffed), false])}) exitWith {false};
+if ((isNull _target) || {(vehicle _target) != _target} || {!(_target getVariable [QGVAR(isHandcuffed), false])} || {!(_target getVariable [QGVAR(isZiptied), false])}) exitWith {false};
 
 if (isNull _vehicle) then {
     //Looking at a captive unit, search for nearby vehicles with valid seats:

@@ -32,3 +32,6 @@ PREP(setHandcuffed);
 PREP(setSurrendered);
 PREP(vehicleCaptiveMoveIn);
 PREP(vehicleCaptiveMoveOut);
+PREP(canEscortZiptiedCaptive);
+PREP(canFriskZiptiedPerson);
+PREP(canRemoveZipties);

@@ -1,6 +1,6 @@
 /*
- * Author: PabstMirror
- * Checks the conditions for being able to apply handcuffs
+ * Author: Nitelite
+ * Checks the conditions for being able to apply Zipties
  *
  * Arguments:
  * 0: caller (player) <OBJECT>
@@ -10,19 +10,20 @@
  * The return value <BOOL>
  *
  * Example:
- * [player, bob] call ACE_captives_fnc_canApplyHandcuffs
+ * [player, bob] call ACE_captives_fnc_canApplyZipties
  *
  * Public: No
  */
 #include "script_component.hpp"
 
 params ["_unit", "_target"];
-//Check sides, Player has cableTie, target is alive and not already handcuffed
+//Check sides, Player has Zipties, target is alive and not already handcuffed/ziptied
 
 (GVAR(allowHandcuffOwnSide) || {(side _unit) != (side _target)}) &&
 {"ACE_CableTie" in (items _unit)} &&
 {alive _target} &&
 {!(_target getVariable [QGVAR(isHandcuffed), false])} &&
+{!(_target getVariable [QGVAR(isZiptied), false])} &&
 {
     (_target getVariable ["ACE_isUnconscious", false]) || //isUnconscious
     {!([_target] call EFUNC(common,isPlayer))} || //is an AI (not a player)
