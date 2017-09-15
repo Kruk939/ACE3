@@ -1,5 +1,6 @@
 
 PREP(canApplyHandcuffs);
+PREP(canApplyZipties);
 PREP(canEscortCaptive);
 PREP(canFriskPerson);
 PREP(canLoadCaptive);
