@@ -17,10 +17,10 @@
 #include "script_component.hpp"
 
 params ["_unit", "_target"];
-//Check sides, Player has cableTie, target is alive and not already handcuffed
+//Check sides, Player has Hundcuffs, target is alive and not already handcuffed
 
 (GVAR(allowHandcuffOwnSide) || {(side _unit) != (side _target)}) &&
-{"RPF_Items_Handcuffs" in (items _unit)} &&
+{"ACE_Handcuffs" in (items _unit)} &&
 {alive _target} &&
 {!(_target getVariable [QGVAR(isHandcuffed), false])} &&
 {
