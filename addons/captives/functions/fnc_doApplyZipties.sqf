@@ -21,8 +21,9 @@ params ["_unit", "_target"];
 
 private _onFinish ={
         (_this select 0) params ["_unit", "_target"];
-        playSound3D [QUOTE(PATHTO_R(sounds\handcuffs.ogg)), objNull, false, (getPosASL _target), 1, 1, 10];
-            [QGVAR(setHandcuffed), [_target, true], [_target]] call CBA_fnc_targetEvent;
+        _unit removeItem "ACE_CableTie";
+        playSound3D [QUOTE(PATHTO_R(sounds\cable_tie_zipping.ogg)), objNull, false, (getPosASL _target), 1, 1, 10];
+            [QGVAR(setZiptied), [_target, true], [_target]] call CBA_fnc_targetEvent;
 };
 
 private _onFailure = {
@@ -32,4 +33,4 @@ private _onFailure = {
 
 [_unit, "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon", 0] call EFUNC(common,doAnimation);
 
-[3, [_unit, _target], _onFinish, _onFailure, ("Putting On Cuffs"), {(_this select 0) call FUNC(canApplyHandcuffs)}] call EFUNC(common,progressBar);
+[3, [_unit, _target], _onFinish, _onFailure, ("Putting On Cuffs"), {(_this select 0) call FUNC(canApplyZipties)}] call EFUNC(common,progressBar);

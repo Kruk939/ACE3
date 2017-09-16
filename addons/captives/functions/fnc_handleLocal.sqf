@@ -34,6 +34,18 @@ if (_local) then {
         _unit setVariable [QGVAR(handcuffAnimEHID), _animChangedEHID];
     };
 
+    // If the unit is ziptied
+    if (_unit getVariable [QGVAR(isZiptied), false]) then {
+        // If the unit already has an AnimChanged EH here then there's nothing to do either
+        if (_unit getVariable [QGVAR(ziptieAnimEHID), -1] != -1) exitWith {};
+
+        // Otherwise, restart the AnimChanged EH in the new machine
+        private _animChangedEHID = _unit addEventHandler ["AnimChanged", DFUNC(handleAnimChangedZiptied)];
+        TRACE_2("Adding animChangedEH",_unit,_animChangedEHID);
+        _unit setVariable [QGVAR(ziptieAnimEHID), _animChangedEHID];
+    };
+
+
     // If the unit is surrendering
     if (_unit getVariable [QGVAR(isSurrendering), false]) then {
         // If the unit already has an AnimChanged EH here then there's nothing to do either
@@ -53,6 +65,14 @@ if (_local) then {
         TRACE_1("Removing animChanged EH",_animChangedEHID);
         _unit removeEventHandler ["AnimChanged", _animChangedEHID];
         _unit setVariable [QGVAR(handcuffAnimEHID), -1];
+    };
+
+    private _animChangedEHID = _unit getVariable [QGVAR(ziptieAnimEHID), -1];
+    if (_animChangedEHID != -1) then {
+        // If the unit had a AnimChanged EH for handcuffing in the old machine then remove it
+        TRACE_1("Removing animChanged EH",_animChangedEHID);
+        _unit removeEventHandler ["AnimChanged", _animChangedEHID];
+        _unit setVariable [QGVAR(ziptieAnimEHID), -1];
     };
 
     _animChangedEHID = _unit getVariable [QGVAR(surrenderAnimEHID), -1];

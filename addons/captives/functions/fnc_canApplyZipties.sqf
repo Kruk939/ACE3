@@ -24,10 +24,4 @@ params ["_unit", "_target"];
 {alive _target} &&
 {!(_target getVariable [QGVAR(isHandcuffed), false])} &&
 {!(_target getVariable [QGVAR(isZiptied), false])} &&
-{
-    (_target getVariable ["ACE_isUnconscious", false]) || //isUnconscious
-    {!([_target] call EFUNC(common,isPlayer))} || //is an AI (not a player)
-    {GVAR(requireSurrender) == 0} || //or don't require surrendering
-    {_target getVariable [QGVAR(isSurrendering), false]} ||  //or is surrendering
-    {(GVAR(requireSurrender) == 2) && {(currentWeapon _target) == ""}} //or "SurrenderOrNoWeapon" and no weapon
-}
+{_target getVariable [QGVAR(isSurrendering), false]}  //or is surrendering

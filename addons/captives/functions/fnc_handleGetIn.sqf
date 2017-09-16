@@ -29,7 +29,7 @@ if (local _unit) then {
         [_unit, false] call FUNC(setSurrendered);
     };
 
-    if (_unit getVariable [QGVAR(isHandcuffed), false]) then {
+    if ((_unit getVariable [QGVAR(isHandcuffed), false]) || (_unit getVariable [QGVAR(isHandcuffed), false])) then {
         //Need to force animation for FFV turrets
         private _turretPath = [];
         {
@@ -41,5 +41,6 @@ if (local _unit) then {
             [_unit, "ACE_HandcuffedFFV", 2] call EFUNC(common,doAnimation);
             [_unit, "ACE_HandcuffedFFV", 1] call EFUNC(common,doAnimation);
         };
+
     };
 };

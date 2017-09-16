@@ -41,7 +41,7 @@ if ((_unit getVariable [QGVAR(isSurrendering), false]) isEqualTo _state) exitWit
 if (_state) then {
     if ((vehicle _unit) != _unit) exitWith {WARNING("Cannot surrender while mounted");};
     if (_unit getVariable [QGVAR(isHandcuffed), false]) exitWith {WARNING("Cannot surrender while handcuffed");};
-
+    if (_unit getVariable [QGVAR(isZiptied), false]) exitWith {WARNING("Cannot surrender while handcuffed");};
     _unit setVariable [QGVAR(isSurrendering), true, true];
 
     [_unit, "setCaptive", QGVAR(Surrendered), true] call EFUNC(common,statusEffect_set);
@@ -79,7 +79,7 @@ if (_state) then {
 
     if (_unit == ACE_player) then {
         //only re-enable HUD if not handcuffed
-        if (!(_unit getVariable [QGVAR(isHandcuffed), false])) then {
+        if ((!(_unit getVariable [QGVAR(isHandcuffed), false])) || (!(_unit getVariable [QGVAR(isZiptied), false]))) then {
             ["captive", []] call EFUNC(common,showHud); //same as showHud true;
         };
     };

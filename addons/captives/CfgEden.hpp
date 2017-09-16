@@ -13,6 +13,16 @@ class Cfg3DEN {
                         condition = "objectBrain";
                         defaultValue = "(false)";
                     };
+                    class ace_isZiptied {
+                        property = QUOTE(ace_isZiptied);
+                        control = "Checkbox";
+                        displayName = CSTRING(ModuleZiptied_DisplayName);
+                        tooltip = CSTRING(ModuleZiptied_Description);
+                        expression = QUOTE(if (_value) then {[ARR_3(objNull,[_this],true)] call FUNC(moduleZiptied)});
+                        typeName = "BOOL";
+                        condition = "objectBrain";
+                        defaultValue = "(false)";
+                    };
                     class ace_isSurrendered {
                         property = QUOTE(ace_isSurrendered);
                         control = "Checkbox";

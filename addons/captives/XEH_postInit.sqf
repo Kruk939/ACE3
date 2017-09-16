@@ -28,6 +28,7 @@ if (isServer) then {
 [QGVAR(moveOutCaptive), FUNC(vehicleCaptiveMoveOut)] call CBA_fnc_addEventHandler;
 
 [QGVAR(setHandcuffed), FUNC(setHandcuffed)] call CBA_fnc_addEventHandler;
+[QGVAR(setZiptied), FUNC(setZiptied)] call CBA_fnc_addEventHandler;
 [QGVAR(setSurrendered), FUNC(setSurrendered)] call CBA_fnc_addEventHandler;
 
 //Medical Integration Events
@@ -37,4 +38,5 @@ if (!hasInterface) exitWith {};
 
 ["isNotEscorting", {!(GETVAR(_this select 0,GVAR(isEscorting),false))}] call EFUNC(common,addCanInteractWithCondition);
 ["isNotHandcuffed", {!(GETVAR(_this select 0,GVAR(isHandcuffed),false))}] call EFUNC(common,addCanInteractWithCondition);
+["isNotHandcuffed", {!(GETVAR(_this select 0,GVAR(isZiptied),false))}] call EFUNC(common,addCanInteractWithCondition);
 ["isNotSurrendering", {!(GETVAR(_this select 0,GVAR(isSurrendering),false))}] call EFUNC(common,addCanInteractWithCondition);

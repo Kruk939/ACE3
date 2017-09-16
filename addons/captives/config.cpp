@@ -3,12 +3,12 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
-        units[] = {QGVAR(ModuleSettings), QGVAR(ModuleSurrender), QGVAR(ModuleHandcuffed)};
-        weapons[] = {"ACE_CableTie"};
+        units[] = {QGVAR(ModuleSettings), QGVAR(ModuleSurrender), QGVAR(ModuleHandcuffed), QGVAR(ModuleZiptied)};
+        weapons[] = {"ACE_CableTie","ACE_Handcuffs","ACE_Handcuffskey"};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"ACE_Interaction"};
         author = ECSTRING(common,ACETeam);
-        authors[] = {"commy2", "KoffeinFlummi"};
+        authors[] = {"commy2", "KoffeinFlummi","Nitelite"};
         url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };

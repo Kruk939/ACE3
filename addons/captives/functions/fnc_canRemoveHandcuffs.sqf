@@ -20,5 +20,6 @@ params ["_unit", "_target"];
 
 //Unit is handcuffed and not currently being escorted
 _target getVariable [QGVAR(isHandcuffed), false] &&
+{"ACE_HandcuffsKey" in (items _unit)} &&
 {isNull (attachedTo _target)} &&
 {(vehicle _target) == _target}

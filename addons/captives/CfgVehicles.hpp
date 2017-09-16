@@ -11,6 +11,15 @@ class CfgVehicles {
                 exceptions[] = {"isNotSwimming", "isNotInside"};
                 icon = QPATHTOF(UI\handcuff_ca.paa);
             };
+           class ACE_ApplyZipties {
+               displayName = CSTRING(SetZiptied);
+               selection = "lefthand";
+               distance = 2;
+               condition = QUOTE([ARR_2(_player, _target)] call FUNC(canApplyZipties));
+               statement = QUOTE([ARR_2(_player, _target)] call FUNC(doApplyZipties));
+               exceptions[] = {"isNotSwimming", "isNotInside"};
+               icon = QPATHTOF(UI\ziptie_ca.paa);
+           };
 
             class ACE_MainActions {
                 class ACE_RemoveHandcuffs {
@@ -21,6 +30,15 @@ class CfgVehicles {
                     statement = QUOTE([ARR_2(_player, _target)] call FUNC(doRemoveHandcuffs));
                     exceptions[] = {"isNotSwimming", "isNotInside"};
                     icon = QPATHTOF(UI\handcuff_ca.paa);
+                };
+                class ACE_RemoveZipties {
+                    displayName = CSTRING(RemoveZipties);
+                    selection = "lefthand";
+                    distance = 2;
+                    condition = QUOTE([ARR_2(_player, _target)] call FUNC(canRemoveZipties));
+                    statement = QUOTE([ARR_2(_player, _target)] call FUNC(doRemoveZipties));
+                    exceptions[] = {"isNotSwimming", "isNotInside"};
+                    icon = QPATHTOF(UI\ziptie_ca.paa);
                 };
                 class ACE_EscortCaptive {
                     displayName = CSTRING(EscortCaptive);

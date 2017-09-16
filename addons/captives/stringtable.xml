@@ -2,7 +2,23 @@
 <Project name="ACE">
     <Package name="Captives">
         <Key ID="STR_ACE_Captives_SetCaptive">
-            <English>Take Prisoner</English>
+            <English>Restrain</English>
+            <German>Gefangen nehmen</German>
+            <Spanish>Tomar prisionero</Spanish>
+            <French>Prendre le prisonnier</French>
+            <Polish>Aresztuj</Polish>
+            <Czech>Zajmout osobu</Czech>
+            <Italian>Arresta il prigioniero</Italian>
+            <Portuguese>Tomar Prisioneiro</Portuguese>
+            <Hungarian>Foglyul ejtés</Hungarian>
+            <Russian>Взять в плен</Russian>
+            <Japanese>捕虜にする</Japanese>
+            <Korean>사로잡기</Korean>
+            <Chinese>逮捕俘虜</Chinese>
+            <Chinesesimp>逮捕俘虏</Chinesesimp>
+        </Key>
+        <Key ID="STR_ACE_Captives_SetZiptied">
+            <English>Ziptie</English>
             <German>Gefangen nehmen</German>
             <Spanish>Tomar prisionero</Spanish>
             <French>Prendre le prisonnier</French>
@@ -18,7 +34,23 @@
             <Chinesesimp>逮捕俘虏</Chinesesimp>
         </Key>
         <Key ID="STR_ACE_Captives_ReleaseCaptive">
-            <English>Free Prisoner</English>
+            <English>Unrestrain</English>
+            <German>Gefangenen freilassen</German>
+            <Spanish>Liberar prisionero</Spanish>
+            <Polish>Wypuść więźnia</Polish>
+            <French>Libérer le prisonnier</French>
+            <Czech>Osvobodit zajatce</Czech>
+            <Italian>Libera il prigioniero</Italian>
+            <Portuguese>Libertar Prisioneiro</Portuguese>
+            <Hungarian>Fogoly szabadon engedése</Hungarian>
+            <Russian>Освободить пленника</Russian>
+            <Japanese>捕虜を解放する</Japanese>
+            <Korean>풀어주기</Korean>
+            <Chinese>釋放俘虜</Chinese>
+            <Chinesesimp>释放俘虏</Chinesesimp>
+        </Key>
+        <Key ID="STR_ACE_Captives_RemoveZipties">
+            <English>Remove Zipties</English>
             <German>Gefangenen freilassen</German>
             <Spanish>Liberar prisionero</Spanish>
             <Polish>Wypuść więźnia</Polish>
@@ -438,6 +470,9 @@
         </Key>
         <Key ID="STR_ACE_Captives_HandcuffsKeysDescription">
             <English>Keys allow you to free your prisoner who is handcuffed.</English>
+        </Key>
+        <Key ID="STR_ACE_Captives_Handcuffing">
+            <English>Cuffing</English>
         </Key>
     </Package>
 </Project>

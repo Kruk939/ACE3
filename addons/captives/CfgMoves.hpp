@@ -53,14 +53,24 @@ class CfgMovesMaleSdr: CfgMovesBasic {
             canReload = 0;
             MACRO_ANIMATION
         };
+
         class ACE_AmovPercMstpScapWnonDnon: ACE_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon {
-            file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\AmovPercMstpSnonWnonDnon_Ease";
+            file = "\A3\anims_f\data\Anim\sdr\cts\arma2\UnaErcPoslechVelitele2";
             speed = 0;
             ConnectTo[] = {"ACE_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
             InterpolateTo[] = {"Unconscious",0.01};
             looped = 1;
             MACRO_ANIMATION
         };
+
+/*        class ACE_AmovPercMstpScapWnonDnon: ACE_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon {
+            file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\AmovPercMstpSnonWnonDnon_Ease";
+            speed = 0;
+            ConnectTo[] = {"ACE_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
+            InterpolateTo[] = {"Unconscious",0.01};
+            looped = 1;
+            MACRO_ANIMATION
+        };*/
         class ACE_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon: ACE_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon {
             actions = "CivilStandActions";
             file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\amovpercmstpsnonwnondnon_easeout";

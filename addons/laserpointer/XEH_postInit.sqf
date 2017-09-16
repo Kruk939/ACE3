@@ -3,6 +3,7 @@
 
 // fixes laser when being captured. Needed, because the selectionPosition of the right hand is used
 [QEGVAR(captives,setHandcuffed), {if (_this select 1) then {(_this select 0) action ["GunLightOff", _this select 0]};}] call CBA_fnc_addEventHandler;
+[QEGVAR(captives,setZiptied), {if (_this select 1) then {(_this select 0) action ["GunLightOff", _this select 0]};}] call CBA_fnc_addEventHandler;
 
 if (!hasInterface) exitWith {};
 
@@ -45,7 +46,7 @@ GVAR(greenLaserUnits) = [];
             GVAR(redLaserUnits) deleteAt (GVAR(redLaserUnits) find _unit);
             GVAR(greenLaserUnits) deleteAt (GVAR(greenLaserUnits) find _unit);
         };
-        
+
         private _laser = [(_unit weaponAccessories _weapon) select 1] param [0, ""];
         if (_laser isEqualTo "") exitWith {
             GVAR(redLaserUnits) deleteAt (GVAR(redLaserUnits) find _unit);

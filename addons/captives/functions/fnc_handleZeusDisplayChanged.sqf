@@ -17,7 +17,7 @@
  */
 #include "script_component.hpp"
 
-if ((ACE_player getVariable [QGVAR(isHandcuffed), false]) || {ACE_player getVariable [QGVAR(isSurrendering), false]}) then {
+if ((ACE_player getVariable [QGVAR(isHandcuffed), false]) || (ACE_player getVariable [QGVAR(isZiptied), false]) || {ACE_player getVariable [QGVAR(isSurrendering), false]}) then {
     TRACE_1("Player Change (showHUD false)",ACE_player);
     ["captive", [false, false, false, false, false, false, false, false]] call EFUNC(common,showHud);
 } else {

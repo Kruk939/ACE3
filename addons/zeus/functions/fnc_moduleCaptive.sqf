@@ -47,4 +47,28 @@ if (isNil QEFUNC(captives,setHandcuffed)) then {
     };
 };
 
+if (isNil QEFUNC(captives,setZiptied)) then {
+    [LSTRING(RequiresAddon)] call FUNC(showMessage);
+} else {
+    _mouseOver = GETMVAR(bis_fnc_curatorObjectPlaced_mouseOver,[""]);
+
+    if ((_mouseOver select 0) != "OBJECT") then {
+        [LSTRING(NothingSelected)] call FUNC(showMessage);
+    } else {
+        _unit = effectivecommander (_mouseOver select 1);
+
+        if !(_unit isKindOf "CAManBase") then {
+            [LSTRING(OnlyInfantry)] call FUNC(showMessage);
+        } else {
+            if !(alive _unit) then {
+                [LSTRING(OnlyAlive)] call FUNC(showMessage);
+            } else {
+                _captive = GETVAR(_unit,EGVAR(captives,isZiptied),false);
+                // Event initalized by ACE_Captives
+                [QEGVAR(captives,setZiptied), [_unit, !_captive], _unit] call CBA_fnc_targetEvent;
+            };
+        };
+    };
+};
+
 deleteVehicle _logic;

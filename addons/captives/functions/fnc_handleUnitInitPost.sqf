@@ -27,6 +27,11 @@ if (local _unit) then {
         [_unit, true] call FUNC(setHandcuffed);
     };
 
+    if (_unit getVariable [QGVAR(isZiptied), false]) then {
+        _unit setVariable [QGVAR(isZiptied), false];
+        [_unit, true] call FUNC(setZiptied);
+    };
+
     if (_unit getVariable [QGVAR(isSurrendering), false]) then {
         _unit setVariable [QGVAR(isSurrendering), false];
         [_unit, true] call FUNC(setSurrendered);

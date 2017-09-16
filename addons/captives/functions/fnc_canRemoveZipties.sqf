@@ -18,7 +18,7 @@
 
 params ["_unit", "_target"];
 
-//Unit is handcuffed and not currently being escorted
+//Unit is ziptied and not currently being escorted
 _target getVariable [QGVAR(isZiptied), false] &&
 {isNull (attachedTo _target)} &&
 {(vehicle _target) == _target}
