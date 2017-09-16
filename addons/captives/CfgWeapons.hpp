@@ -15,7 +15,7 @@ class CfgWeapons {
     class ACE_Handcuffs: ACE_ItemCore {
         displayName = CSTRING(Handcuffs);
         descriptionShort = CSTRING(HandcuffsDescription);
-        //model = QPATHTOF(models\ace_cabletie.p3d);
+        model = QPATHTOF(models\ace_handcuffs.p3d);
         picture = QPATHTOF(UI\ace_handcuff_ca.paa);
         scope = 2;
         class ItemInfo: CBA_MiscItem_ItemInfo {

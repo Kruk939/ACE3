@@ -17,11 +17,7 @@
 #include "script_component.hpp"
 
 params ["_unit", "_target"];
-<<<<<<< Updated upstream
-//Check sides, Player has Hundcuffs, target is alive and not already handcuffed
-=======
 //Check sides, Player has handcuffs, target is alive and not already handcuffed/ziptied
->>>>>>> Stashed changes
 
 (GVAR(allowHandcuffOwnSide) || {(side _unit) != (side _target)}) &&
 {"ACE_Handcuffs" in (items _unit)} &&

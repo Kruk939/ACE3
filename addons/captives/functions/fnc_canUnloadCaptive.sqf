@@ -18,4 +18,4 @@
 
 params ["_player", "_unit"];
 
-((vehicle _unit) != _unit) && {_unit getVariable [QGVAR(isHandcuffed), false]}
+((vehicle _unit) != _unit) && {_unit getVariable [QGVAR(isHandcuffed), false]} || {_unit getVariable [QGVAR(isZiptied), false]}
