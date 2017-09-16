@@ -22,7 +22,10 @@ params ["_unit", "_target","_vehicle"];
 if ((isNull _target) && {_unit getVariable [QGVAR(isEscorting), false]}) then {
     //Looking at a vehicle while escorting, get target from attached objects:
     {
-        if ((_x getVariable [QGVAR(isHandcuffed), false]) || (_x getVariable [QGVAR(isZiptied), false])) exitWith {
+        if (_x getVariable [QGVAR(isHandcuffed), false]) exitWith {
+            _target = _x;
+        };
+        if (_x getVariable [QGVAR(isZiptied), false]) exitWith {
             _target = _x;
         };
     } forEach (attachedObjects _unit);

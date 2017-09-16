@@ -33,4 +33,4 @@ private _onFailure = {
 
 [_unit, "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon", 0] call EFUNC(common,doAnimation);
 
-[3, [_unit, _target], _onFinish, _onFailure, ("Putting On Cuffs"), {(_this select 0) call FUNC(canApplyZipties)}] call EFUNC(common,progressBar);
+[3, [_unit, _target], _onFinish, _onFailure, ("Restraining"), {(_this select 0) call FUNC(canApplyZipties)}] call EFUNC(common,progressBar);

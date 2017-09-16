@@ -50,6 +50,16 @@ class CfgVehicles {
                     icon = QPATHTOF(UI\captive_ca.paa);
                     priority = 2.3;
                 };
+                class ACE_EscortZiptiedCaptive {
+                    displayName = CSTRING(EscortCaptive);
+                    distance = 4;
+                    condition = QUOTE([ARR_2(_player, _target)] call FUNC(canEscortZiptiedCaptive));
+                    statement = QUOTE([ARR_3(_player, _target, true)] call FUNC(doEscortCaptive));
+                    exceptions[] = {"isNotSwimming"};
+                    showDisabled = 0;
+                    icon = QPATHTOF(UI\captive_ca.paa);
+                    priority = 2.3;
+                };
                 class ACE_StopEscorting {
                     displayName = CSTRING(StopEscorting);
                     distance = 4;
