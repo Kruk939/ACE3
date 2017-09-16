@@ -20,6 +20,7 @@ params ["_unit", "_target"];
 //Alive, handcuffed, not being escored, and not unconscious
 
 (_target getVariable [QGVAR(isHandcuffed), false]) &&
+{"ACE_HandcuffsKey" in (items _unit)} &&
 {isNull (attachedTo _target)} &&
 {alive _target} &&
 {!(_target getVariable ["ACE_isUnconscious", false])} &&

@@ -17,5 +17,5 @@
 #include "script_component.hpp"
 
 params ["_player", "_unit"];
-if (!("ACE_HandcuffsKey" in (items _unit))) exitwith {false};
-((vehicle _unit) != _unit) && {_unit getVariable [QGVAR(isHandcuffed), false]}
+
+((vehicle _unit) != _unit) && {_unit getVariable [QGVAR(isZiptied), false]}

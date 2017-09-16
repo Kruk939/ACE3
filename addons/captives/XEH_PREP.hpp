@@ -41,3 +41,6 @@ PREP(handleAnimChangedZiptied);
 PREP(setZiptied);
 PREP(moduleZiptied);
 PREP(doRemoveZipties);
+PREP(canLoadZiptiedCaptive);
+PREP(doLoadZiptiedCaptive);
+PREP(canUnloadZiptiedCaptive);
