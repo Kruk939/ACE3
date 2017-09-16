@@ -21,7 +21,7 @@
 [QGVAR(setStatusEffect), {_this call FUNC(statusEffect_set)}] call CBA_fnc_addEventHandler;
 ["forceWalk", false, ["ACE_SwitchUnits", "ACE_Attach", "ACE_dragging", "ACE_Explosives", "ACE_Ladder", "ACE_Sandbag", "ACE_refuel", "ACE_rearm", "ACE_dragging"]] call FUNC(statusEffect_addType);
 ["blockSprint", false, []] call FUNC(statusEffect_addType);
-["setCaptive", true, [QEGVAR(captives,Handcuffed), QEGVAR(captives,Surrendered), "ace_unconscious"]] call FUNC(statusEffect_addType);
+["setCaptive", true, [QEGVAR(captives,Handcuffed), QEGVAR(captives,Ziptied), QEGVAR(captives,Surrendered), "ace_unconscious"]] call FUNC(statusEffect_addType);
 ["blockDamage", false, ["fixCollision", "ACE_cargo"]] call FUNC(statusEffect_addType);
 ["blockEngine", false, ["ACE_Refuel"]] call FUNC(statusEffect_addType);
 
@@ -323,10 +323,10 @@ addMissionEventHandler ["PlayerViewChanged", {
     // On non-server client this command is semi-broken
     // arg index 5 should be the controlled UAV, but it will often be objNull (delay from locality switching?)
     // On PlayerViewChanged event, start polling for new uav state for a few seconds (should be done within a few frames)
-    
+
     params ["", "", "", "", "_newCameraOn", "_UAV"];
     TRACE_2("PlayerViewChanged",_newCameraOn,_UAV);
-    
+
     [{
         if (isNull player) exitWith {true};
         private _UAV = getConnectedUAV player;
@@ -347,14 +347,14 @@ addMissionEventHandler ["PlayerViewChanged", {
                 _seatAI = gunner _UAV;
             };
         };
-        
+
         private _newArray = [_UAV, _seatAI, _turret, _position];
         if (_newArray isEqualTo ACE_controlledUAV) exitWith {false}; // no change yet
-        
+
         TRACE_2("Seat Change",_newArray,ACE_controlledUAV);
         ACE_controlledUAV = _newArray;
         ["ACE_controlledUAV", _newArray] call CBA_fnc_localEvent;
-        
+
         // stay in the loop as we might switch from gunner -> driver, and there may be a empty position event in-between
         false
     }, {}, [], 3, {TRACE_1("timeout",_this);}] call CBA_fnc_waitUntilAndExecute;

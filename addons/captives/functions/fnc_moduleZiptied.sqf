@@ -30,7 +30,7 @@ if (!isServer) exitWith {};
     params ["_units"];
     {
         TRACE_2("event",_x,local _x);
-        [QGVAR(setHandcuffed), [_x, true], [_x]] call CBA_fnc_targetEvent;
+        [QGVAR(setZiptied), [_x, true], [_x]] call CBA_fnc_targetEvent;
     } forEach _units;
 }, [_units], 0.05] call CBA_fnc_waitAndExecute;
 

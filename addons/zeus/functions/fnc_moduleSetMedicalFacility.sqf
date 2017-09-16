@@ -39,7 +39,7 @@ if !(["ACE_Medical"] call EFUNC(common,isModLoaded)) then {
             if !(alive _unit) then {
                 [LSTRING(OnlyAlive)] call FUNC(showMessage);
             } else {
-                if (GETVAR(_unit,EGVAR(captives,isHandcuffed),false)) then {
+                if ((GETVAR(_unit,EGVAR(captives,isHandcuffed),false)) || (GETVAR(_unit,EGVAR(captives,isZiptied),false))) then {
                     [LSTRING(OnlyNonCaptive)] call FUNC(showMessage);
                 } else {
                     if (!(GETVAR(_unit,EGVAR(medical,isMedicalFacility),false))) then {
