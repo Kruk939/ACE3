@@ -44,3 +44,5 @@ PREP(doRemoveZipties);
 PREP(canLoadZiptiedCaptive);
 PREP(doLoadZiptiedCaptive);
 PREP(canUnloadZiptiedCaptive);
+PREP(canLockpickHandcuffs);
+PREP(doLockpickHandcuffs);

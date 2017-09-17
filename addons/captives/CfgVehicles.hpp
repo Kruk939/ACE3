@@ -110,6 +110,16 @@ class CfgVehicles {
                     icon = QPATHTOF(UI\captive_ca.paa);
                     priority = 2.2;
                 };
+                class ACE_LockpickHandcuffs {
+                    displayName = CSTRING(Lockpick);
+                    distance = 4;
+                    condition = QUOTE([ARR_3(_player, _target, objNull)] call FUNC(canLockpickHandcuffs));
+                    statement = QUOTE([ARR_3(_player, _target, objNull)] call FUNC(doLockpickHandcuffs));
+                    exceptions[] = {"isNotEscorting", "isNotSwimming"};
+                    showDisabled = 0;
+                    icon = QPATHTOF(UI\lockpick_ca.paa);
+                    priority = 2.2;
+                };
                 class GVAR(UnloadCaptive) {
                     displayName = CSTRING(UnloadCaptive);
                     distance = 4;

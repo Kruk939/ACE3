@@ -471,6 +471,12 @@
         <Key ID="STR_ACE_Captives_HandcuffsKeysDescription">
             <English>Keys allow you to free your prisoner who is handcuffed.</English>
         </Key>
+        <Key ID="STR_ACE_Captives_Lockpick">
+            <English>Lockpick</English>
+        </Key>
+        <Key ID="STR_ACE_Captives_LockpickDescription">
+            <English>Lockpics can be used to open certain locks.</English>
+        </Key>
         <Key ID="STR_ACE_Captives_Handcuffing">
             <English>Cuffing</English>
         </Key>

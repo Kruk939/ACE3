@@ -43,5 +43,5 @@ if (isNull _vehicle) then {
         _vehicle = objNull;
     };
 };
-
+if ((_target distance _vehicle) > 3) exitWith {false};
 (!isNull _vehicle)

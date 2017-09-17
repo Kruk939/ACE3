@@ -32,4 +32,14 @@ class CfgWeapons {
            mass = 1;
       };
   };
+   class ACE_Lockpick: ACE_ItemCore {
+      displayName = CSTRING(Lockpick);
+      descriptionShort = CSTRING(LockpickDescription);
+      //model = QPATHTOF(models\ace_cabletie.p3d);
+      picture = QPATHTOF(UI\ace_lockpick_ca.paa);
+      scope = 2;
+      class ItemInfo: CBA_MiscItem_ItemInfo {
+           mass = 1;
+      };
+  };
 };
