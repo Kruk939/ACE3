@@ -32,6 +32,8 @@ if (_putDownAnim != "") exitWith { false };
 (alive _target) &&
 {(abs (speed _target)) < 1} &&
 {(vehicle _target) == _target} &&
-{(_target getVariable [QEGVAR(captives,isHandcuffed), false])} &&
-{(_target getVariable [QEGVAR(captives,isZiptied), false])}
+{
+((_target getVariable [QEGVAR(captives,isZiptied), false]) ||
+(_target getVariable [QEGVAR(captives,isHandcuffed), false]))
+}
 //    (_target getVariable [QEGVAR(captives,isSurrendering), false])}

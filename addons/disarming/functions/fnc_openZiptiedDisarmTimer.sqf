@@ -20,7 +20,7 @@ params ["_unit", "_target"];
 
 private _onFinish ={
         (_this select 0) params ["_unit", "_target"];
-        [_unit, _target] call ace_disarming_fnc_openDisarmDialog;
+        [_unit, _target] call ace_disarming_fnc_openZiptiedDisarmDialog;
         [_unit, "AmovPknlMstpSrasWrflDnon", 1] call EFUNC(common,doAnimation);
 };
 
@@ -31,4 +31,4 @@ private _onFailure = {
 
 [_unit, "AinvPknlMstpSnonWnonDr_medic5", 0] call EFUNC(common,doAnimation);
 
-[10, [_unit, _target], _onFinish, _onFailure, ("Patting down"), {(_this select 0) call FUNC(canPlayerDisarmUnit)}] call EFUNC(common,progressBar);
+[10, [_unit, _target], _onFinish, _onFailure, ("Patting down"), {(_this select 0) call FUNC(canPlayerDisarmZiptiedUnit)}] call EFUNC(common,progressBar);

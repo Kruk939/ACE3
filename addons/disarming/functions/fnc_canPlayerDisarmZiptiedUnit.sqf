@@ -19,6 +19,6 @@
 
 params ["_player", "_target"];
 
-([_target] call FUNC(canBeDisarmed)) &&
+[_target] call FUNC(canBeDisarmed) &&
 (_target getVariable [QEGVAR(captives,isZiptied), false]) &&
-{([_player, _target, ["isNotSwimming"]] call EFUNC(common,canInteractWith))}
+{[_player, _target, ["isNotSwimming"]] call EFUNC(common,canInteractWith)}

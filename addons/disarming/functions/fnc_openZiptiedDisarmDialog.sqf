@@ -21,7 +21,7 @@ private ["_player"];
 #define DEFUALTPATH "\A3\Ui_f\data\GUI\Cfg\Ranks\%1_gs.paa"
 //Sanity Checks
 if (_caller != ACE_player) exitWith {ERROR("Player isn't caller?");};
-if (!([_player, _target] call FUNC(canPlayerDisarmUnit))) exitWith {ERROR("Can't Disarm Unit");};
+if (!([_player, _target] call FUNC(canPlayerDisarmZiptiedUnit))) exitWith {ERROR("Can't Disarm Unit");};
 if (dialog) then {ERROR("Dialog open when trying to open disarm dialog"); closeDialog 0;};
 
 disableSerialization;
@@ -54,7 +54,7 @@ GVAR(disarmTarget) = _target;
     params ["_args", "_idPFH"];
     _args params ["_player", "_target", "_display"];
 
-    if ((!([_player, _target] call FUNC(canPlayerDisarmUnit))) ||
+    if ((!([_player, _target] call FUNC(canPlayerDisarmZiptiedUnit))) ||
             {isNull _display} ||
             {_player != ACE_player}) then {
 

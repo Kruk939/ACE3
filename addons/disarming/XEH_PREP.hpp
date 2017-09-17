@@ -12,3 +12,5 @@ PREP(showItemsInListbox);
 PREP(verifyMagazinesMoved);
 PREP(canPlayerDisarmZiptiedUnit);
 PREP(openDisarmTimer);
+PREP(openZiptiedDisarmTimer);
+PREP(openZiptiedDisarmDialog);

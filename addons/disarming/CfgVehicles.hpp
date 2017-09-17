@@ -12,10 +12,10 @@ class CfgVehicles {
                     icon = QPATHTOF(UI\disarm.paa);
                 };
                 class ACE_DisarmZiptiedInventory {
-                    displayName = CSTRING(OpenInventory);
+                    displayName = "Pat Down";
                     distance = 3.5;
                     condition = QUOTE([ARR_2(_player,_target)] call FUNC(canPlayerDisarmZiptiedUnit));
-                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(openDisarmDTimer));
+                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(openZiptiedDisarmTimer));
                     exceptions[] = {"isNotSwimming"};
                     icon = QPATHTOF(UI\disarm.paa);
                 };

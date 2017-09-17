@@ -8,7 +8,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"ACE_Interaction"};
         author = ECSTRING(common,ACETeam);
-        authors[] = {"PabstMirror"};
+        authors[] = {"PabstMirror","Nitelite"};
         url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };
