@@ -20,6 +20,5 @@
 params ["_player", "_target"];
 
 ([_target] call FUNC(canBeDisarmed)) &&
-{"ACE_HandcuffsKey" in (items player)} &&
-{(_target getVariable [QEGVAR(captives,isHandcuffed), false])} &&
+(_target getVariable [QEGVAR(captives,isZiptied), false]) &&
 {([_player, _target, ["isNotSwimming"]] call EFUNC(common,canInteractWith))}

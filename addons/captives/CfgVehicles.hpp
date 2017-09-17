@@ -70,26 +70,6 @@ class CfgVehicles {
                     icon = QPATHTOF(UI\captive_ca.paa);
                     priority = 2.3;
                 };
-                class ACE_FriskPerson {
-                    displayName = CSTRING(StopEscorting);
-                    distance = 4;
-                    condition = QUOTE([ARR_2(_player, _target)] call FUNC(canFriskPerson));
-                    statement = QUOTE([ARR_2(_player, _target)] call FUNC(doFriskPerson));
-                    exceptions[] = {"isNotEscorting", "isNotSwimming"};
-                    showDisabled = 0;
-                    icon = QPATHTOF(UI\captive_ca.paa);
-                    priority = 2.3;
-                };
-                class ACE_FriskZiptiedPerson {
-                    displayName = CSTRING(StopEscorting);
-                    distance = 4;
-                    condition = QUOTE([ARR_2(_player, _target)] call FUNC(canFriskZiptiedPerson));
-                    statement = QUOTE([ARR_2(_player, _target)] call FUNC(doFriskPerson));
-                    exceptions[] = {"isNotEscorting", "isNotSwimming"};
-                    showDisabled = 0;
-                    icon = QPATHTOF(UI\captive_ca.paa);
-                    priority = 2.3;
-                };
                 class ACE_LoadCaptive {
                     displayName = CSTRING(LoadCaptive);
                     distance = 4;
@@ -180,8 +160,17 @@ class CfgVehicles {
                     exceptions[] = {"isNotEscorting", "isNotSwimming"}; \
                     priority = 1.2; \
                 }; \
+                class GVAR(LoadZiptiedCaptive) { \
+                    displayName = CSTRING(LoadCaptive); \
+                    distance = 4; \
+                    condition = QUOTE([ARR_3(_player, objNull, _target)] call FUNC(canLoadZiptiedCaptive)); \
+                    statement = QUOTE([ARR_3(_player, objNull, _target)] call FUNC(doLoadZiptiedCaptive)); \
+                    exceptions[] = {"isNotEscorting", "isNotSwimming"}; \
+                    priority = 1.2; \
+                }; \
             }; \
         };
+
 
     class LandVehicle;
     class Car: LandVehicle {

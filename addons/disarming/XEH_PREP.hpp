@@ -10,3 +10,5 @@ PREP(getAllGearUnit);
 PREP(openDisarmDialog);
 PREP(showItemsInListbox);
 PREP(verifyMagazinesMoved);
+PREP(canPlayerDisarmZiptiedUnit);
+PREP(openDisarmTimer);

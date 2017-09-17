@@ -16,6 +16,6 @@
 #include "script_component.hpp"
 
 params ["_unit", "_target"];
-_unit addItem "ACE_Handcuffs";
 playSound3D [QUOTE(PATHTO_R(sounds\handcuffs.ogg)), objNull, false, (getPosASL _target), 1, 1, 10];
 [QGVAR(setHandcuffed), [_target, false], [_target]] call CBA_fnc_targetEvent;
+_unit addItem "ACE_Handcuffs";

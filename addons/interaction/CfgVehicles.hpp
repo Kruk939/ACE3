@@ -17,13 +17,13 @@ class CfgVehicles {
                 displayName = CSTRING(EnableTeamManagement_DisplayName);
                 description = CSTRING(EnableTeamManagement_Description);
                 typeName = "BOOL";
-                defaultValue = 1;
+                defaultValue = 0;
             };
             class DisableNegativeRating {
                 displayName = CSTRING(DisableNegativeRating_DisplayName);
                 description = CSTRING(DisableNegativeRating_Description);
                 typeName = "BOOL";
-                defaultValue = 0;
+                defaultValue = 1;
             };
         };
         class ModuleDescription {
@@ -137,7 +137,7 @@ class CfgVehicles {
                     priority = 2.6;
                     icon = QPATHTOF(UI\team\team_management_ca.paa);
                 };
-                class ACE_GetDown {
+                /*class ACE_GetDown {
                     displayName = CSTRING(GetDown);
                     condition = QUOTE([ARR_2(_player,_target)] call DFUNC(canInteractWithCivilian));
                     statement = QUOTE([ARR_2(_player,_target)] call DFUNC(getDown));
@@ -167,7 +167,7 @@ class CfgVehicles {
                     exceptions[] = {"isNotSwimming"};
                     showDisabled = 0;
                     priority = 2.6;
-                };
+                };*/
             };
 
             class ACE_Torso {
@@ -245,7 +245,7 @@ class CfgVehicles {
         };
 
         class ACE_SelfActions {
-            class ACE_TeamManagement {
+            /*class ACE_TeamManagement {
                 displayName = CSTRING(TeamManagement);
                 condition = QUOTE(GVAR(EnableTeamManagement));
                 exceptions[] = {"isNotSwimming", "isNotInside", "isNotSitting", "isNotOnLadder", "isNotRefueling"};
@@ -317,7 +317,7 @@ class CfgVehicles {
                     priority = 1.2;
                     icon = QPATHTOF(UI\team\team_management_ca.paa);
                 };
-            };
+            };*/
 
             class ACE_Equipment {
                 displayName = CSTRING(Equipment);

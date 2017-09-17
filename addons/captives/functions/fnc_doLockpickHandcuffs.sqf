@@ -17,15 +17,14 @@
 
 params ["_unit", "_target"];
 private ["_value","_random","_onFinish"];
-_unit addItem "ACE_Handcuffs";
-[QGVAR(setHandcuffed), [_target, false], [_target]] call CBA_fnc_targetEvent;
+
 
 _value = 5;
 _random = round(random 10);
 
 
 if (_value > _random) then {
-private _onFinish = {
+_onFinish = {
         (_this select 0) params ["_unit", "_target"];
         _unit removeItem "ACE_Lockpick";
         playSound3D [QUOTE(PATHTO_R(sounds\handcuffs.ogg)), objNull, false, (getPosASL _target), 1, 1, 10];
@@ -33,7 +32,7 @@ private _onFinish = {
         [_unit, "AmovPknlMstpSrasWrflDnon", 1] call EFUNC(common,doAnimation);
 };
 }else{
-private _onFinish = {
+_onFinish = {
         (_this select 0) params ["_unit", "_target"];
         _unit removeItem "ACE_Lockpick";
         [_unit, "AmovPknlMstpSrasWrflDnon", 1] call EFUNC(common,doAnimation);
@@ -48,4 +47,4 @@ private _onFailure = {
 
 [_unit, "AinvPknlMstpSnonWnonDr_medic5", 0] call EFUNC(common,doAnimation);
 
-[10, [_unit, _target], _onFinish, _onFailure, ("Lockpicking Handcuffs"), {(_this select 0) call FUNC(canLockpickHandcuffs)}] call EFUNC(common,progressBar);
+[60, [_unit, _target], _onFinish, _onFailure, ("Lockpicking Handcuffs"), {(_this select 0) call FUNC(canLockpickHandcuffs)}] call EFUNC(common,progressBar);

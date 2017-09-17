@@ -18,7 +18,7 @@
 
 params ["_player", "_unit"];
 //if (!("ACE_HandcuffsKey" in (items _unit))) exitwith {false};
-((vehicle _unit) != _unit) &&
+(vehicle _unit) != _unit &&
 {"ACE_HandcuffsKey" in (items _player)} &&
 {_unit getVariable [QGVAR(isHandcuffed), false]}
 
