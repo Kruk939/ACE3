@@ -16,5 +16,5 @@
 #include "script_component.hpp"
 
 params ["_unit", "_target"];
-
+_unit addItem "ACE_Handcuffs";
 [QGVAR(setHandcuffed), [_target, false], [_target]] call CBA_fnc_targetEvent;

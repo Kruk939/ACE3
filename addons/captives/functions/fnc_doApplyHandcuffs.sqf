@@ -21,6 +21,7 @@ params ["_unit", "_target"];
 
 private _onFinish ={
         (_this select 0) params ["_unit", "_target"];
+        _unit removeItem "ACE_Handcuffs";
         playSound3D [QUOTE(PATHTO_R(sounds\handcuffs.ogg)), objNull, false, (getPosASL _target), 1, 1, 10];
             [QGVAR(setHandcuffed), [_target, true], [_target]] call CBA_fnc_targetEvent;
 };

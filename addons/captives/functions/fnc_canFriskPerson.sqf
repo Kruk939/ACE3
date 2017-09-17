@@ -17,8 +17,11 @@
 #include "script_component.hpp"
 
 params ["_unit", "_target"];
-if (!("ACE_HandcuffsKey" in (items _unit))) exitwith {false};
-_target getVariable [QGVAR(isHandcuffed), false]
-|| {_target getVariable [QGVAR(isSurrendering), false]}
-|| {_target getVariable ["ACE_isSearchable", false]}
+
+"ACE_HandcuffsKey" in (items _unit) &&
+{
+_target getVariable [QGVAR(isHandcuffed), false] ||
+_target getVariable [QGVAR(isSurrendering), false] ||
+_target getVariable ["ACE_isSearchable", false]
 //|| {_target getVariable ["ACE_isUnconscious", false]}
+}

@@ -70,6 +70,26 @@ class CfgVehicles {
                     icon = QPATHTOF(UI\captive_ca.paa);
                     priority = 2.3;
                 };
+                class ACE_FriskPerson {
+                    displayName = CSTRING(StopEscorting);
+                    distance = 4;
+                    condition = QUOTE([ARR_2(_player, _target)] call FUNC(canFriskPerson));
+                    statement = QUOTE([ARR_2(_player, _target)] call FUNC(doFriskPerson));
+                    exceptions[] = {"isNotEscorting", "isNotSwimming"};
+                    showDisabled = 0;
+                    icon = QPATHTOF(UI\captive_ca.paa);
+                    priority = 2.3;
+                };
+                class ACE_FriskZiptiedPerson {
+                    displayName = CSTRING(StopEscorting);
+                    distance = 4;
+                    condition = QUOTE([ARR_2(_player, _target)] call FUNC(canFriskZiptiedPerson));
+                    statement = QUOTE([ARR_2(_player, _target)] call FUNC(doFriskPerson));
+                    exceptions[] = {"isNotEscorting", "isNotSwimming"};
+                    showDisabled = 0;
+                    icon = QPATHTOF(UI\captive_ca.paa);
+                    priority = 2.3;
+                };
                 class ACE_LoadCaptive {
                     displayName = CSTRING(LoadCaptive);
                     distance = 4;
@@ -80,10 +100,28 @@ class CfgVehicles {
                     icon = QPATHTOF(UI\captive_ca.paa);
                     priority = 2.2;
                 };
+                class ACE_LoadZiptiedCaptive {
+                    displayName = CSTRING(LoadCaptive);
+                    distance = 4;
+                    condition = QUOTE([ARR_3(_player, _target, objNull)] call FUNC(canLoadZiptiedCaptive));
+                    statement = QUOTE([ARR_3(_player, _target, objNull)] call FUNC(doLoadZiptiedCaptive));
+                    exceptions[] = {"isNotEscorting", "isNotSwimming"};
+                    showDisabled = 0;
+                    icon = QPATHTOF(UI\captive_ca.paa);
+                    priority = 2.2;
+                };
                 class GVAR(UnloadCaptive) {
                     displayName = CSTRING(UnloadCaptive);
                     distance = 4;
                     condition = QUOTE([ARR_2(_player, _target)] call FUNC(canUnloadCaptive));
+                    statement = QUOTE([ARR_2(_player, _target)] call FUNC(doUnloadCaptive));
+                    exceptions[] = {"isNotSwimming"};
+                    priority = 1.2;
+                };
+                class GVAR(UnloadZiptiedCaptive) {
+                    displayName = CSTRING(UnloadCaptive);
+                    distance = 4;
+                    condition = QUOTE([ARR_2(_player, _target)] call FUNC(canUnloadZiptiedCaptive));
                     statement = QUOTE([ARR_2(_player, _target)] call FUNC(doUnloadCaptive));
                     exceptions[] = {"isNotSwimming"};
                     priority = 1.2;
