@@ -249,4 +249,12 @@ class CfgVehicles {
         GVAR(dragPosition)[] = {0,1.2,0};
         GVAR(dragDirection) = 180;
     };
+        class Building;
+        class OpenRP_Barrier_base : Building {
+        GVAR(canCarry) = 1;
+        GVAR(canDrag) = 1;
+        GVAR(carryPosition)[] = {0,1,1};
+        GVAR(dragPosition)[] = {0,1.2,0};
+    };
+
 };

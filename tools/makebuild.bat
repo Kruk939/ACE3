@@ -1,1 +1,1 @@
-C:\Users\Nitelite\Desktop\openRP\Repo\ACE3\tools\make.py version checkexternal release
+C:\Users\Nitelite\Desktop\openRP\Repo\ACE3\tools\make.py version increment_minor checkexternal release
