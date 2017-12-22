@@ -31,4 +31,7 @@ if (_isUnconc) then {
         [_unit] call EFUNC(common,fixLoweredRifleAnimation);
         [_unit, "ACE_AmovPercMstpScapWnonDnon", 1] call EFUNC(common,doAnimation);
     };
+    if (currentWeapon _unit != "") then {
+        _unit action ["SwitchWeapon", _unit, _unit, 100];
+    };
 };

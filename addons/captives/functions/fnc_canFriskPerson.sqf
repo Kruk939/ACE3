@@ -19,6 +19,7 @@
 params ["_unit", "_target"];
 
 "ACE_HandcuffsKey" in (items _unit) &&
+!(_target getVariable ["ACE_isUnconscious", false]) &&
 {
 _target getVariable [QGVAR(isHandcuffed), false] ||
 _target getVariable [QGVAR(isSurrendering), false] ||
